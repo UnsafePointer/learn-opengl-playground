@@ -1,5 +1,5 @@
 CXX		  := g++
-CXX_FLAGS := -Wall -Wextra -std=c++17 -ggdb
+CXX_FLAGS := -Wall -Wextra -std=c++17 -ggdb `pkg-config --cflags glfw3`
 
 OPENGL_API := 3.3
 GLAD_BUILD_DIR := glad
@@ -9,7 +9,7 @@ SRC		:= src
 INCLUDE	:= include
 LIB		:= lib
 
-LIBRARIES	:= -ldl
+LIBRARIES	:= -ldl `pkg-config --static --libs glfw3`
 EXECUTABLE	:= renderer
 
 
